@@ -165,7 +165,7 @@ const PLANO = (() => {
       const cv2 = document.createElement("canvas"); const vp = page.getViewport({ scale: 1.6 });
       cv2.width = vp.width; cv2.height = vp.height; const cx = cv2.getContext("2d");
       cx.fillStyle = "#FFF"; cx.fillRect(0, 0, cv2.width, cv2.height);
-      await page.render({ canvasContext: cx, viewport: vp }).promise;
+      await page.render({ canvasContext: cx, viewport: vp, intent: "print" }).promise; // "print" no espera al cuadro de animación: funciona aunque la pestaña esté en segundo plano
       cx.drawImage(img, 0, 0, cv2.width, cv2.height);
       await SYC.idb.poner(`vista-${p.id}-${pg}`, { bytes: await aBytes(cv2, "image/jpeg", 0.84) });
     }
