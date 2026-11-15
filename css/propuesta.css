@@ -240,6 +240,12 @@ svg { flex: none; }
   .btn:active, .demo-c:active { transform: none; }
 }
 .sec, .cierre, .portada { scroll-margin-top: 80px; }
+@media (max-width: 380px) { .barra .txt-b { display: none; } .barra .btn-s { padding: 0 5px; gap: 0; } }
+.portada .envol > *, .tablero > *, .pieza > * { min-width: 0; }
+.vis { overflow: hidden; }
+.planes > * { min-width: 0; }
+@media (max-width: 400px) { .plan { padding: 22px; } .plan .precio b { font-size: 32px; } .plan .ins { top: 16px; right: 16px; } }
+@media (max-width: 400px) { .eti { align-items: flex-start; border-radius: 18px; } .fila .btn { white-space: normal; } .pz b { font-size: 21px; } .tablero { gap: 10px; } .pz { padding: 14px; } }
 @media (max-width: 480px) {
   .firma-b { font-size: 14px; white-space: nowrap; }
   .barra .sin-movil { display: none; }
