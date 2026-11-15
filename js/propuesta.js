@@ -7,9 +7,8 @@ const PLANES = [
   { id: "esencial", n: "Esencial", anual: 4800, para: "Para el instalador que quiere cotizar rápido y entregar en orden.",
     x: ["Cotizador con inventario por tipo", "Varias opciones por propuesta", "PDF de cotización con su marca", "Expediente en un solo PDF", "Documentos fijos en todas las propuestas", "2 usuarios"] },
   { id: "profesional", n: "Profesional", anual: 9600, rec: true, para: "Para la empresa que visita, dibuja y quiere cerrar más.",
-    x: ["<b>Todo lo de Esencial</b>", "Plano en PDF para dibujar encima", "Conteo del plano a la cotización", "Enlace personal con su dominio", "Firma del cliente en línea", "Aviso cuando el cliente abre", "Etapas de obra con fotos", "5 usuarios"] },
-  { id: "empresa", n: "Empresa", anual: 16800, para: "Para equipos con varias cuadrillas, bodegas o sucursales.",
-    x: ["<b>Todo lo de Profesional</b>", "Varias bodegas y sucursales", "Permisos por puesto", "Ganancia real por proyecto", "Recordatorios de mantenimiento", "Catálogo completo cargado", "15 usuarios"] }
+    x: ["<b>Todo lo de Esencial</b>", "Plano en PDF para dibujar encima", "Conteo del plano a la cotización", "Enlace personal con su dominio", "Firma del cliente en línea", "Aviso cuando el cliente abre", "Etapas de obra con fotos", "5 usuarios"] }
+  // Plan Empresa (Q16,800/año) quitado por ahora a pedido de Antonio (2026-11-14)
 ];
 
 const $ = (s, r = document) => r.querySelector(s);
