@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Su propuesta · Sol & Cobre</title>
+<meta name="description" content="Su propuesta de Sol & Cobre: opciones, plano, documentos y avance de la obra.">
+<meta name="theme-color" content="#111111">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%23111111'/%3E%3Ccircle cx='12' cy='12' r='5' fill='%23F2B01E'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css?v=3">
+<style>
+  /* Enlace del cliente: claro, paneles blancos grandes, negro para lo importante */
+  .cl-barra { display: flex; align-items: center; gap: 12px; max-width: 900px; margin: 16px auto 0; padding: 12px 16px; border-radius: 999px; background: var(--vidrio); border: 1px solid var(--borde-v); box-shadow: var(--sombra); width: calc(100% - 32px); }
+  .cl-barra .logo { width: 40px; height: 40px; border-radius: 50%; background: #111; display: grid; place-items: center; flex: none; }
+  .cl-barra b { font-size: 17px; font-weight: 800; letter-spacing: -0.04em; display: block; line-height: 1.1; }
+  .cl-barra small { color: var(--gris); display: block; font-size: 12px; }
+  .cl-in { max-width: 900px; margin: 0 auto; padding: 0 16px; }
+  .cl-hero { padding: 40px 0 10px; }
+  .cl-eti { font-size: 13px; font-weight: 700; color: var(--gris); letter-spacing: .04em; text-transform: uppercase; }
+  .cl-hero h1 { font-size: clamp(36px, 7vw, 64px); margin: 10px 0 10px; font-weight: 800; letter-spacing: -0.055em; line-height: .96; }
+  .cl-sub { color: var(--tinta-2); font-size: 16px; }
+  .cl-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+  .cl-pill { display: inline-flex; align-items: center; gap: 7px; padding: 8px 14px; border-radius: 999px; background: rgba(255,255,255,.85); box-shadow: 0 0 0 1px var(--linea); font-size: 13.5px; font-weight: 650; }
+  .cl-pill.on { background: #111; color: #fff; box-shadow: none; }
+  .cl-big { display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 12px; margin-top: 24px; }
+  .cl-big div { background: var(--vidrio); border: 1px solid var(--borde-v); box-shadow: var(--sombra); border-radius: 24px; padding: 18px 20px; }
+  .cl-big div:first-child { background: radial-gradient(120% 90% at 100% 0%, #2A2A2A 0%, #0E0E0E 60%); color: #fff; border-color: #111; }
+  .cl-big span { font-size: 13px; color: var(--gris); font-weight: 600; }
+  .cl-big div:first-child span { color: #BDBDBA; }
+  .cl-big b { display: block; font-size: clamp(24px, 4.4vw, 36px); font-weight: 800; letter-spacing: -0.045em; margin-top: 6px; line-height: 1.05; }
+  @media (max-width: 600px) { .cl-big { grid-template-columns: 1fr 1fr; } .cl-big div:first-child { grid-column: 1 / -1; } }
+  .cl-sec { padding: 12px 0; }
+  .cl-sec > .cl-in > * { }
+  .cl-caja { background: var(--vidrio); border: 1px solid var(--borde-v); box-shadow: var(--sombra); border-radius: 28px; padding: 26px; }
+  @media (max-width: 600px) { .cl-caja { padding: 20px; border-radius: 24px; } }
+  .cl-sec h2 { font-size: 24px; font-weight: 800; letter-spacing: -0.035em; margin-bottom: 16px; }
+  .cl-etapas { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(8, 1fr); gap: 4px; }
+  .cl-etapas li { display: grid; gap: 10px; position: relative; align-content: start; }
+  .cl-etapas .pt { width: 28px; height: 28px; border-radius: 50%; background: var(--papel); display: grid; place-items: center; z-index: 1; }
+  .cl-etapas li::before { content: ""; position: absolute; top: 13px; left: 28px; right: -4px; height: 2px; background: var(--linea); }
+  .cl-etapas li:last-child::before { display: none; }
+  .cl-etapas li.hecha .pt { background: #111; color: #fff; }
+  .cl-etapas li.hecha::before { background: #111; }
+  .cl-etapas li.ahora .pt { background: #fff; box-shadow: 0 0 0 2px #111; }
+  .cl-etapas li.ahora .pt::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: var(--sol); }
+  .cl-etapas b { font-size: 12.5px; line-height: 1.25; display: block; font-weight: 700; }
+  .cl-etapas li:not(.hecha):not(.ahora) b { color: var(--gris); font-weight: 600; }
+  .cl-etapas small { font-size: 12.5px; color: var(--gris); }
+  @media (max-width: 760px) {
+    .cl-etapas { grid-template-columns: 1fr; gap: 0; }
+    .cl-etapas li { grid-template-columns: 28px 1fr; gap: 14px; padding-bottom: 14px; }
+    .cl-etapas li::before { top: 28px; left: 13px; right: auto; bottom: 0; width: 2px; height: auto; }
+  }
+  .cl-ops { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; }
+  .cl-op { position: relative; text-align: left; display: grid; gap: 6px; padding: 22px; border-radius: 24px; border: 0; background: #fff; box-shadow: 0 0 0 1px var(--linea); cursor: pointer; transition: box-shadow 180ms var(--ease), transform 140ms var(--ease); }
+  .cl-op:active { transform: scale(0.98); }
+  .cl-op.on { box-shadow: 0 0 0 2.5px #111, 0 24px 40px -30px rgba(0,0,0,.4); }
+  .cl-op-n { font-weight: 700; font-size: 15px; padding-right: 34px; color: var(--tinta-2); }
+  .cl-op > b { font-size: 32px; font-weight: 800; letter-spacing: -0.045em; }
+  .cl-op ul { margin: 8px 0 0; padding: 0; list-style: none; font-size: 14.5px; color: var(--tinta-2); display: grid; gap: 6px; }
+  .cl-op li { display: flex; gap: 8px; } .cl-op li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #111; margin-top: 8px; flex: none; }
+  .cl-check { position: absolute; top: 20px; right: 20px; width: 28px; height: 28px; border-radius: 50%; box-shadow: 0 0 0 1.5px var(--linea); display: grid; place-items: center; color: transparent; transition: background-color 180ms var(--ease); }
+  .cl-op.on .cl-check { background: #111; box-shadow: none; color: #fff; }
+  .cl-firmar { margin-top: 20px; display: grid; gap: 8px; justify-items: start; }
+  .btn-g { min-height: 56px; font-size: 16px; padding-right: 26px; }
+  .btn-g > svg:first-child { width: 42px !important; height: 42px !important; padding: 11px !important; }
+  .cl-ok { display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: center; background: #111; color: #fff; padding: 20px 22px; border-radius: 26px; }
+  .cl-ok > svg { width: 40px; height: 40px; padding: 9px; border-radius: 50%; background: #fff; color: var(--bien); }
+  .cl-ok p { color: #BDBDBA; font-size: 14px; margin-top: 2px; }
+  .cl-firma-img { height: 58px; background: #fff; border-radius: 12px; padding: 4px 8px; }
+  @media (max-width: 600px) { .cl-ok { grid-template-columns: auto 1fr; } .cl-firma-img { grid-column: 1 / -1; } }
+  .cl-barras { display: grid; gap: 16px; margin-bottom: 12px; }
+  .cl-barras div { display: grid; grid-template-columns: 1fr auto; gap: 6px 12px; align-items: center; }
+  .cl-barras span { grid-column: 1 / -1; font-size: 14px; color: var(--tinta-2); font-weight: 600; }
+  .cl-barras i { height: 16px; border-radius: 999px; background: #D6D6D2; width: var(--w); transform-origin: left; animation: crece 900ms var(--ease) both; }
+  .cl-barras i.sol { background: #111; }
+  .cl-barras b { font-size: 18px; font-weight: 800; letter-spacing: -0.03em; }
+  @keyframes crece { from { transform: scaleX(0.02); } }
+  .cl-planos { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+  .cl-hoja { padding: 0; border: 0; box-shadow: 0 0 0 1px var(--linea); border-radius: 20px; overflow: hidden; background: #fff; cursor: zoom-in; display: grid; transition: transform 140ms var(--ease); }
+  .cl-hoja:active { transform: scale(0.98); }
+  .cl-hoja img { width: 100%; display: block; }
+  .cl-hoja span { font-size: 13.5px; padding: 10px 14px; text-align: left; font-weight: 700; border-top: 1px solid var(--linea); }
+  .cl-grupo { margin-bottom: 16px; }
+  .cl-grupo h3 { font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--gris); font-weight: 750; display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+  .cl-grupo h3 svg { color: var(--tinta); }
+  .cl-grupo ul { list-style: none; margin: 0; padding: 0; }
+  .cl-grupo li { display: flex; justify-content: space-between; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--linea); font-size: 15px; }
+  .cl-grupo li b { font-weight: 700; }
+  .cl-tot { background: var(--papel); border-radius: 20px; padding: 14px 18px; margin-top: 18px; }
+  .cl-tot div { display: flex; justify-content: space-between; padding: 5px 0; font-size: 15px; }
+  .cl-tot .g { font-size: 20px; font-weight: 800; letter-spacing: -0.03em; border-top: 1px solid var(--linea); margin-top: 6px; padding-top: 10px; }
+  .cl-exp { display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: center; }
+  .cl-exp-ic { width: 56px; height: 66px; border-radius: 14px; background: #111; color: #fff; display: grid; place-items: center; }
+  .cl-exp b { font-size: 16.5px; font-weight: 750; }
+  .cl-chat { display: grid; gap: 8px; margin-bottom: 14px; }
+  .cl-msg { max-width: 80%; padding: 12px 16px; border-radius: 20px 20px 20px 6px; background: var(--papel); }
+  .cl-msg.yo { justify-self: end; background: #111; color: #fff; border-radius: 20px 20px 6px 20px; }
+  .cl-msg small { color: var(--gris); font-size: 12px; }
+  .cl-msg.yo small { color: #BDBDBA; }
+  .cl-pad { width: 100%; height: 160px; border-radius: 18px; background: #fff; box-shadow: 0 0 0 1px var(--linea); touch-action: none; cursor: crosshair; }
+  .cl-pie { padding: 26px 0 50px; }
+  .cl-pie .cl-in { display: flex; gap: 14px; align-items: center; }
+  .cl-pie .logo { width: 44px; height: 44px; border-radius: 50%; background: #111; display: grid; place-items: center; flex: none; }
+  .cl-pie b { font-size: 16px; font-weight: 800; letter-spacing: -0.03em; }
+  .cl-pie p { font-size: 13px; color: var(--gris); }
+  .cinta-cl { background: #111; color: #CFCFCC; font-size: 12.5px; padding: 8px 18px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .cinta-cl a { color: #fff; font-weight: 650; margin-left: auto; text-decoration: none; }
+  @media (prefers-reduced-motion: reduce) { .cl-barras i { animation: none; } }
+</style>
+</head>
+<body>
+<div class="cinta-cl"><span>Así ve su cliente el enlace. Lo que haga aquí le llega al panel al momento.</span><a href="./">Ir al panel del instalador</a></div>
+<div class="cl-barra"><span class="logo"><svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5" fill="#F2B01E"/><g stroke="#F2B01E" stroke-width="2" stroke-linecap="round"><path d="M12 1.5v2.5M12 20v2.5M1.5 12H4M20 12h2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></g></svg></span><div><b>Sol &amp; Cobre</b><small>Energía solar e instalaciones eléctricas</small></div></div>
+<main id="cliente"></main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" integrity="sha384-/1qUCSGwTur9vjf/z9lmu/eCUYbpOTgSjmpbMQZ1/CtX2v/WcAIKqRv+U1DUCG6e" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js" integrity="sha384-weMABwrltA6jWR8DDe9Jp5blk+tZQh7ugpCsF3JwSA53WZM9/14PjS5LAJNHNjAI" crossorigin="anonymous"></script>
+<script src="ui.js?v=3"></script>
+<script src="datos.js?v=3"></script>
+<script src="pdfs.js?v=3"></script>
+<script src="plano.js?v=3"></script>
+<script src="cliente.js?v=3"></script>
+</body>
+</html>

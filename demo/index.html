@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sol & Cobre · Sistema de propuestas</title>
+<meta name="description" content="Demo: cotizador con inventario por tipo, plano en PDF para dibujar encima, expediente en un solo PDF y enlace de seguimiento para cada cliente.">
+<meta name="theme-color" content="#111111">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%23111111'/%3E%3Ccircle cx='12' cy='12' r='5' fill='%23F2B01E'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css?v=3">
+</head>
+<body>
+<div class="cinta" data-cinta><b>Demo</b><span class="largo">Sistema de propuestas para energía e instalaciones · hecho por Monterroso Dev Studio</span><button type="button" data-reset>Reiniciar</button><a href="../">Volver a la propuesta →</a></div>
+<div class="app">
+  <nav class="menu" aria-label="Menú">
+    <div class="marca"><span class="marca-sol"><svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5" fill="#F2B01E"/><g stroke="#F2B01E" stroke-width="2" stroke-linecap="round"><path d="M12 1.5v2.5M12 20v2.5M1.5 12H4M20 12h2.5M4.6 4.6l1.8 1.8M17.6 17.6l1.8 1.8M4.6 19.4l1.8-1.8M17.6 6.4l1.8-1.8"/></g></svg></span><div><b>Sol &amp; Cobre</b><small>Energía e instalaciones</small></div></div>
+    <a href="#/hoy" data-nav="hoy"></a>
+    <a href="#/proyectos" data-nav="proyectos"></a>
+    <a href="#/inventario" data-nav="inventario"></a>
+    <a href="#/empresa" data-nav="empresa"></a>
+    <div class="pie-m">Todo se guarda en este navegador. Con el sistema real, en la nube y en todos sus aparatos.</div>
+  </nav>
+  <main class="principal" id="vista" tabindex="-1"></main>
+</div>
+<nav class="abajo" aria-label="Menú">
+  <a href="#/hoy" data-nav="hoy"></a><a href="#/proyectos" data-nav="proyectos"></a><a href="#/inventario" data-nav="inventario"></a><a href="#/empresa" data-nav="empresa"></a>
+</nav>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js" integrity="sha384-/1qUCSGwTur9vjf/z9lmu/eCUYbpOTgSjmpbMQZ1/CtX2v/WcAIKqRv+U1DUCG6e" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js" integrity="sha384-weMABwrltA6jWR8DDe9Jp5blk+tZQh7ugpCsF3JwSA53WZM9/14PjS5LAJNHNjAI" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" integrity="sha384-3zSEDfvllQohrq0PHL1fOXJuC/jSOO34H46t6UQfobFOmxE5BpjjaIJY5F2/bMnU" crossorigin="anonymous"></script>
+<script src="ui.js?v=3"></script>
+<script src="datos.js?v=3"></script>
+<script src="pdfs.js?v=3"></script>
+<script src="plano.js?v=3"></script>
+<script>
+  // menú con íconos
+  const NAV = { hoy: ["home", "Hoy"], proyectos: ["folder", "Propuestas"], inventario: ["box", "Inventario"], empresa: ["building", "Empresa"] };
+  document.querySelectorAll("[data-nav]").forEach(a => { const [i, n] = NAV[a.dataset.nav]; a.innerHTML = ico(i, 19) + "<span>" + n + "</span>"; });
+  document.querySelector("[data-reset]").onclick = () => dialogo({ titulo: "¿Reiniciar la demo?", html: "<p>Se borra lo que agregó en este navegador y vuelven los datos de ejemplo.</p>", okTxt: "Reiniciar", ok: () => { SYC.reiniciar().then(() => { location.hash = "#/hoy"; location.reload(); }); } });
+</script>
+<script src="app.js?v=3"></script>
+</body>
+</html>
