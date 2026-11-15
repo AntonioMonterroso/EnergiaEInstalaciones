@@ -114,7 +114,7 @@ iconos();
 planes();
 $("[data-iva]").addEventListener("change", planes);
 $("[data-unir]").addEventListener("click", unir);
-$("[data-wa]").href = `https://wa.me/${WA}?text=${encodeURIComponent("Hola Antonio, vi la propuesta del sistema para energía e instalaciones y quiero hablar.")}`;
+$$("[data-wa]").forEach(a => { a.href = `https://wa.me/${WA}?text=${encodeURIComponent("Hola Antonio, vi la propuesta del sistema para energía e instalaciones y quiero hablar.")}`; });
 revelar();
 // la demostración de unir se dispara sola la primera vez que se ve
 const hojas = $("[data-hojas]");
